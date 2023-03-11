@@ -1,3 +1,3 @@
 # Python and Django
 
-### Learn the python and Django from the basic level
+### Learn Python and Django from the basic level
