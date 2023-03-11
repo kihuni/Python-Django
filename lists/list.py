@@ -1,4 +1,4 @@
-countries = ['kenya', 'nigeria','tanzania','morrocco']
+countries = ['kenya', 'nigeria','tanzania','morrocco'] # lists of strings
 
 print('getting list of countries from index 1 to the end')
 print(countries[1:])
