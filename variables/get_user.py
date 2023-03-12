@@ -1,3 +1,5 @@
+# variable store values in python
+
 name = input('Input Your Name: ')
 age = int(input("Input your name: "))
 
