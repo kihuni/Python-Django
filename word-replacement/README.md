@@ -1,3 +1,3 @@
 # Python Basics
 
-### Word replacement using python
+### Simple Word replacement using python
