@@ -2,4 +2,4 @@
 
 - its a python web framework
 
-- To start django prject, run `django-admin startproject nameOfYourProject`
+- To start django project, run `django-admin startproject nameOfYourProject`
