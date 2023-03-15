@@ -7,7 +7,12 @@
 
 ## install packages
 
+```
 python -m venv env
+
 source env/bin/activate   # on Unix-based systems
+
 env\Scripts\activate     # on Windows
+
 pip install -r requirements.txt
+```
