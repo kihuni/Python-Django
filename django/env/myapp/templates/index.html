@@ -1,6 +1,10 @@
-<h2>Write something here: </h2>
+{% load static %}
 
-<form method="" action="counter">
-    <textarea name="texts" id="" cols="100" rows="30"></textarea>
-    <input type="submit">
-</form>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+{% for feature in features %}
+<div class="kih">
+    <h3>{{feature.name}}</h3>
+    <p>{{feature.details}}</p>
+</div>
+{% endfor %}
