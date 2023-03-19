@@ -1,23 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from django.http import HttpResponse
 from .models import Feature
 
 # Create your views here.
 def index(request):
-    feature1 = Feature()
-    feature1.id = 1
-    feature1.name = 'kihuni'
-    feature1.details = 'Never give up my friend'
-    feature1.is_true = 'true'
-
-    feature2 = Feature()
-    feature2.id = 2
-    feature2.name = 'stephen'
-    feature2.details = 'Dont worry to much bro'
-    feature2.is_true = 'false'
-    
-    features = [feature1, feature2]
+    features = Feature.objects.all()
     return render(request, 'index.html', {'features': features})
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['username']
+        password = request.POST['username']
+        password2 = request.POST['username']
+
+        if password == password2:
+            if User.objects.filter(email=email).exists():
+                messages.info(request, 'Email Already Exist')
+                return redirect('register')
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, 'Username Already Exist')
+                return redirect('register')
+            else:
+                user = User.objects.create_user(username=username, email=email, password=password)
+                user.save()
+                return redirect('login')
+        else:
+            messages.info(request, 'Password dont much!')
+            return redirect('register')
+
+    return render(request, 'register.html')
 
 def counter(request):
     texts = request.POST['texts']
