@@ -33,6 +33,9 @@ def register(request):
 
     return render(request, 'register.html')
 
+def Login(request):
+    return render(request, 'login.html')
+
 def counter(request):
     texts = request.POST['texts']
     amount_of_words = len(texts.split())
