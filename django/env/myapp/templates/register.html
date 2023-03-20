@@ -5,10 +5,10 @@
         color:red
     }
 </style>
-
+ 
 {% for message in messages %}
 <h5>{{message}}</h5>
-{%endfor%}
+{% endfor %}
 <form method="POST" action="register">
 {% csrf_token %}
 <p>username:</p>

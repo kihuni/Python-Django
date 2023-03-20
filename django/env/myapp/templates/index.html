@@ -4,6 +4,11 @@
 
 {% for feature in features %}
 <div class="kih">
+    {% if user.is_authenticated %}
+    <h2>Welcome, {{user.username}}</h2>
+    {% else %}
+    <h2>Welcom to the Home Page</h2>
+    {% endif %}
     <h3>{{feature.name}}</h3>
     <p>{{feature.details}}</p>
 </div>
