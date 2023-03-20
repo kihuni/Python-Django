@@ -2,6 +2,14 @@
 
 <link rel="stylesheet" href="{% static 'style.css' %}">
 
+<div class="login-out">
+    {% if user.is_authenticated %}
+     <button><a href="">log-out</a> </button>
+     {% else %}
+     <button> <a href="login">sign-in or sign-up</a>  </button>
+     {% endif%}
+    </div>
+
 {% for feature in features %}
 <div class="kih">
     {% if user.is_authenticated %}
